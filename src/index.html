@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="icons8-formulaire-de-saisie-de-numéros-16.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Secret Number Game</title>
 </head>
 
 <body>
     
-    <h1 ><strong>Secret Number game</strong></h1>
+    <h1 ><strong>Secret Number Game</strong></h1>
     <h2><strong>Try guessing the secret number from 1 to 100</strong></h2>
     <input type="number" id="numberInput">
     <button onclick="treatedShowAttempts()">Try</button>
+    <br><br>
     <div id="ifCorrect"></div>
     <p>Attempts: </p>
     <p id="attemptsHTML">0</p>
@@ -20,7 +23,7 @@
 </body>
 <script type="module">
     import { getSecretNumber } from "./game.js";
-    import { treatedShowAttempts, resetButton, verify } from "./script.js";
+    import { treatedShowAttempts, resetButton } from "./script.js";
     
     window.treatedShowAttempts = treatedShowAttempts;
     window.resetButton = resetButton;

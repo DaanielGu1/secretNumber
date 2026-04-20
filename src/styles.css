@@ -1,0 +1,26 @@
+body {
+    margin: 10rem;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+input {
+    font-size: 2rem;
+}
+
+button {
+    font-size: 2rem;
+}
+
+.correct-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}

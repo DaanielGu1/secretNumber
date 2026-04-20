@@ -14,15 +14,17 @@ export function treatedShowAttempts() {
     const textBox = document.getElementById("ifCorrect");
     if (inputValue.length == 0) {
         textBox.innerText = "You need to write a number";
+        textBox.classList.add("error-message");
     }
     else if (inputValue >= 1 && inputValue <= 100) {
         showAttempts()
     } else if (inputValue < 1 || inputValue > 100) {
-        textBox.innerText = "Try a valid number.";       
+        textBox.innerText = "Try a valid number.";    
+        textBox.classList.add("error-message");   
     }
 }
 
-export function showAttempts() {
+function showAttempts() {
     increaseAttempts();
     const windowAttempts = document.getElementById("attemptsHTML");
     windowAttempts.innerText = getAttempts();
@@ -41,18 +43,25 @@ export function resetButton() {
     document.getElementById("ifCorrect").innerText = "";
 }
 
-export function verify() {
+function verify() {
     const textBox = document.getElementById("ifCorrect");
     const inputValue = document.getElementById("numberInput").value;
     const inputValueParsed = Number.parseInt(inputValue);
     var secretNumber = getSecretNumber();
+    
+    textBox.classList.remove("error-message", "correct-message");
+    
     if (inputValueParsed === secretNumber) {
         textBox.innerText = "Congratulations! The number is correct!";
+        textBox.classList.add("correct-message");
     } else if (inputValueParsed > secretNumber) {
         textBox.innerText = "Wrong number! Try guessing lower.";
+        textBox.classList.add("error-message");
     } else if (inputValueParsed < secretNumber){
         textBox.innerText = "Wrong number! Try guessing higher.";
+        textBox.classList.add("error-message");
     } else {
         textBox.innerText = "ERROR";
+        textBox.classList.add("error-message");
     }
 }
